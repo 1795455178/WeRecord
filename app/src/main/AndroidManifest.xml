@@ -3,8 +3,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="xjunz.tool.werecord">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <queries>
         <package android:name="com.tencent.mm" />
@@ -12,6 +11,7 @@
     <application
         android:name="xjunz.tool.werecord.App"
         android:allowBackup="false"
+        android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:resizeableActivity="false"
@@ -29,6 +29,7 @@
         </provider>
 
         <activity
+            android:exported="true"
             android:name="xjunz.tool.werecord.ui.main.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -53,9 +54,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="false"
             android:name="xjunz.tool.werecord.ui.outer.DebugActivity"
             android:theme="@style/Base.AppTheme" />
         <activity
+            android:exported="true"
             android:name="xjunz.tool.werecord.ui.outer.InitializationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Base.AppTheme">
@@ -65,6 +68,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="true"
             android:name="xjunz.tool.werecord.ui.main.DetailActivity"
             android:theme="@style/Base.AppTheme.Main.Translucent.Dialog.Detail">
             <intent-filter>
@@ -72,28 +76,36 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="false"
             android:name="xjunz.tool.werecord.ui.main.ImageViewerActivity"
             android:theme="@style/Base.AppTheme.Main.Translucent.Dialog.ImageViewer" />
         <activity
+            android:exported="false"
             android:name="xjunz.tool.werecord.ui.message.MessageActivity"
             android:theme="@style/Base.AppTheme.Main.Translucent.Message" />
         <activity
+            android:exported="false"
             android:name="xjunz.tool.werecord.ui.message.EditorActivity"
             android:theme="@style/Base.AppTheme.Main" />
         <activity
+            android:exported="false"
             android:name="xjunz.tool.werecord.ui.export.MessageExportActivity"
             android:theme="@style/Base.AppTheme.Main.Translucent.MessageExport" />
         <activity
+            android:exported="false"
             android:name="xjunz.tool.werecord.ui.export.ContactExportActivity"
             android:theme="@style/Base.AppTheme.Main.Translucent.ContactExport" />
         <activity
+            android:exported="false"
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:label="@string/oss_license_title"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
+            android:exported="false"
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
+            android:exported="false"
             android:name=".ui.outer.CrashReportActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Base.AppTheme.Main.Translucent" />

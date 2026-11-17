@@ -25,3 +25,11 @@
 -keep class com.google.crypto.**{ *; }
 #FilterFragment.onPrepareFilter()
 -keepclassmembers class androidx.appcompat.widget.AppCompatSpinner{private <fields>;}
+
+# --- AGP 8 / R8 下常见的可选注解与缺失引用 ---
+-dontwarn org.jetbrains.annotations.**
+-dontwarn javax.annotation.**
+-dontwarn com.google.errorprone.annotations.**
+-dontwarn org.checkerframework.**
+-keep class com.google.android.gms.oss.licenses.** { *; }
+-keepattributes *Annotation*, InnerClasses, Signature, EnclosingMethod

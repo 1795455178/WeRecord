@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 15+ 的并集版本：v24/v27 里的 item 全部保留，另加 edge-to-edge 退出 -->
+    <style name="Base.AppTheme">
+        <item name="android:navigationBarColor">?colorPrimary</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:contextPopupMenuStyle">@style/FlatContextMenu</item>
+        <item name="android:popupMenuStyle">@style/FlatContextMenu</item>
+        <item name="android:ambientShadowAlpha">.039</item>
+        <item name="android:spotShadowAlpha">.089</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>

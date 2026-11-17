@@ -34,7 +34,28 @@
          }
      }
 
-     @Override
+          @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         applyInsetsFallback();
+     }
+
+     /**
+      * targetSdk 35+ 起系统强制 edge-to-edge。主题里用 windowOptOutEdgeToEdgeEnforcement 退出了，
+      * 这里再兜一层：即便系统忽略那个标记，内容也不会被状态栏 / 导航栏压住。
+      */
+     private void applyInsetsFallback() {
+         if (Build.VERSION.SDK_INT < 35) return;
+         final View decor = getWindow().getDecorView();
+         decor.setOnApplyWindowInsetsListener((v, insets) -> {
+             android.graphics.Insets bars = insets.getInsets(android.view.WindowInsets.Type.systemBars());
+             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+             return insets;
+         });
+         decor.requestApplyInsets();
+     }
+
+@Override
      public void finish() {
          super.finish();
       //   overridePendingTransition(R.anim.dialog_enter, R.anim.dialog_exit);
