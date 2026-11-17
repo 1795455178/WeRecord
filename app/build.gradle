@@ -15,7 +15,7 @@ android {
         versionName "1.01"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
-            abiFilters 'armeabi-v7a','arm64-v8a','armeabi'
+            abiFilters 'armeabi-v7a','arm64-v8a'
         }
     }
     buildTypes {
